@@ -15,7 +15,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> changed.
         </p>
-        <p> hello {handleNameChanges()}</p>
+        <p> Hello {handleNameChanges()}</p>
         <a
           className="App-link"
           href="https://reactjs.org"
