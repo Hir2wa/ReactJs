@@ -5,7 +5,7 @@ const Header = () => {
     <header
       style={{
         backgroundColor: "mediumblue",
-        color: "green",
+        color: "white",
       }}
     >
       <h1> Groceries List</h1>
