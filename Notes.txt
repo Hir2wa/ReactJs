@@ -1,1 +1,2 @@
 Functinal componect 
+component in react in other words are functional componect because it using the function which is return jsx as html but under the hood these is the js dom " 
