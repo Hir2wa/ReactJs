@@ -10,13 +10,14 @@ const Content = () => {
   const handleClick1 = () => {
     console.log("clicked me ");
   };
-  const handleClick2 = () => {
-    console.log("clicked me ");
+  const handleClick2 = (name) => {
+    console.log(`${name} was clicked`);
   };
   return (
     <main>
       <p>Hello {handleNameChanges()}</p>
       <button onClick={handleClick1}>Add</button>
+      <button onClick={() => handleClick2("Alain")}>Add</button>
     </main>
   );
 };
