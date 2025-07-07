@@ -2,6 +2,7 @@
 import "./App.css";
 import Header from "./Header";
 import Content from "./Content";
+import Footer from "./Footer";
 function App() {
   // const handleNameChanges = () => {
   //   let name = ["Alain", "Hirwa", "Fabrice"];
@@ -29,6 +30,7 @@ function App() {
 
       <Header />
       <Content />
+      <Footer />
     </div>
   );
 }
