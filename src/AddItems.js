@@ -1,6 +1,6 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa";
-export const AddItems = () => {
+export const AddItems = ({ newItem, setNewItem, handleSubmit }) => {
   return (
     <form>
       <label htmlFor="addItem">Add Item</label>
