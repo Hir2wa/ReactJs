@@ -18,6 +18,11 @@ const ListKeys = () => {
     setItems(listItems);
     localStorage.setItem("Item-List", JSON.stringify(listItems));
   };
+  const handeDelete = (id) => {
+    const listItems = items.filter((items) => items.id !== id);
+    setItems(listItems);
+    localStorage.setItem("Item-List", JSON.stringify(listItems));
+  };
   return (
     <main>
       {items.map((item) => (
@@ -28,7 +33,11 @@ const ListKeys = () => {
             onChange={() => handleChange(item.id)}
           ></input>
           <label>{item.item}</label>
-          <FaTrashAlt />
+          <FaTrashAlt
+            role="button"
+            tabIndex={"0"}
+            onClick={() => handeDelete(item.id)}
+          />
         </li>
       ))}
     </main>
