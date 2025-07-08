@@ -6,4 +6,10 @@ component in react in other words are functional componect because it using the 
 3.creating file in js
 but the purpose of creating is not creating scope is organizing
 so for small project you can create nested codes but for big project not recomended 
-learned U state wh
+React Hook 
+⚠️ Rules of Hooks (React strictly enforces this)
+✅ You can only use Hooks inside function components
+
+✅ Always at the top level of the component (not inside if, for, etc.)
+
+✅ Hooks must start with use
