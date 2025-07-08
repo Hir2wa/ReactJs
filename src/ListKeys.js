@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-
+import { FaTrashAlt } from "react-icons/fa";
 const ListKeys = () => {
   const [items, setItems] = useState([
     { id: 1, item: "shoes", checked: true },
     { id: 2, item: "t-shirt", checked: false },
     { id: 3, item: "jacket", checked: true },
   ]);
-
   const handleChange = (id) => {
     const listItems = items.map((item) =>
       item.id === id
@@ -29,7 +28,7 @@ const ListKeys = () => {
             onChange={() => handleChange(item.id)}
           ></input>
           <label>{item.item}</label>
-          <button>Delete</button>
+          <FaTrashAlt />
         </li>
       ))}
     </main>
