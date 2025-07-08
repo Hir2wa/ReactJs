@@ -13,6 +13,8 @@ function App() {
     { id: 3, item: "jacket", checked: true },
   ]);
 
+  const [newItem, setNewItem] = useState("");
+
   const handleChange = (id) => {
     const listItems = items.map((item) =>
       item.id === id
@@ -34,7 +36,7 @@ function App() {
     <div className="App">
       <Header title="Grocery List " />
       <AddItems />
-      <Content />
+      {/* <Content /> */}
       <ListKeys
         items={items}
         handleChange={handleChange}
