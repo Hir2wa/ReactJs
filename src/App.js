@@ -11,6 +11,23 @@ function App() {
     { id: 3, item: "jacket", checked: true },
   ]);
 
+  const handleChange = (id) => {
+    const listItems = items.map((item) =>
+      item.id === id
+        ? {
+            ...item,
+            checked: !item.checked,
+          }
+        : item
+    );
+    setItems(listItems);
+    localStorage.setItem("Item-List", JSON.stringify(listItems));
+  };
+  const handeDelete = (id) => {
+    const listItems = items.filter((items) => items.id !== id);
+    setItems(listItems);
+    localStorage.setItem("Item-List", JSON.stringify(listItems));
+  };
   return (
     <div className="App">
       <Header title="Grocery List " />
