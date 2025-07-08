@@ -32,10 +32,15 @@ function App() {
     setItems(listItems);
     localStorage.setItem("Item-List", JSON.stringify(listItems));
   };
+
+  const handleSubmit = (e) => {
+    console.log("submitted succefully");
+  };
+
   return (
     <div className="App">
       <Header title="Grocery List " />
-      <AddItems />
+      <AddItems newItem={newItem} setNewItem={setNewItem} />
       {/* <Content /> */}
       <ListKeys
         items={items}
