@@ -40,7 +40,11 @@ function App() {
   return (
     <div className="App">
       <Header title="Grocery List " />
-      <AddItems newItem={newItem} setNewItem={setNewItem} />
+      <AddItems
+        newItem={newItem}
+        setNewItem={setNewItem}
+        handleSubmit={handleSubmit}
+      />
       {/* <Content /> */}
       <ListKeys
         items={items}
