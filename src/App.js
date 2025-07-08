@@ -5,6 +5,7 @@ import Header from "./Header";
 import Content from "./Content";
 import Footer from "./Footer";
 import ListKeys from "./ListKeys";
+import { AddItems } from "./AddItems";
 function App() {
   const [items, setItems] = useState([
     { id: 1, item: "shoes", checked: true },
@@ -32,6 +33,7 @@ function App() {
   return (
     <div className="App">
       <Header title="Grocery List " />
+      <AddItems />
       <Content />
       <ListKeys
         items={items}
