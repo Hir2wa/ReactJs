@@ -18,3 +18,14 @@ React Hook
 
 React List and Keys 
 --------------------
+React Prop and prop PropDrilling
+---------------------------------
+these is properties and propertiese are holding data and these 
+and prop drilling allwo as to take that data down from parent component to child component 
+
+| Concept           | What it means                             |
+| ----------------- | ----------------------------------------- |
+| **Prop**          | A way to send data from parent → child    |
+| **Prop Drilling** | Sending props through too many components |
+| **Problem**       | Messy, hard to maintain                   |
+| **Fix**           | Context API, Redux, Zustand, etc          |
