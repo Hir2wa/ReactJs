@@ -1,4 +1,5 @@
 // import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Content from "./Content";
@@ -23,7 +24,7 @@ function App() {
     setItems(listItems);
     localStorage.setItem("Item-List", JSON.stringify(listItems));
   };
-  const handeDelete = (id) => {
+  const handleDelete = (id) => {
     const listItems = items.filter((items) => items.id !== id);
     setItems(listItems);
     localStorage.setItem("Item-List", JSON.stringify(listItems));
@@ -32,7 +33,11 @@ function App() {
     <div className="App">
       <Header title="Grocery List " />
       <Content />
-      <ListKeys />
+      <ListKeys
+        items={items}
+        handleChange={handleChange}
+        handleDelete={handleDelete}
+      />
       <Footer />
     </div>
   );
