@@ -38,7 +38,7 @@ function App() {
         handleChange={handleChange}
         handleDelete={handleDelete}
       />
-      <Footer />
+      <Footer items={items} length={items.length} />
     </div>
   );
 }
