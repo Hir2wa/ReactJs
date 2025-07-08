@@ -7,7 +7,7 @@ import ListKeys from "./ListKeys";
 function App() {
   return (
     <div className="App">
-      <Header title="Groceries" />
+      <Header title="Grocery List " />
       <Content />
       <ListKeys />
       <Footer />
