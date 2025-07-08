@@ -1,6 +1,5 @@
-import React, { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
-const ListKeys = () => {
+const ListKeys = ({ items, handleChange, handleDelete }) => {
   return (
     <main>
       {items.length ? (
@@ -15,7 +14,7 @@ const ListKeys = () => {
             <FaTrashAlt
               role="button"
               tabIndex={"0"}
-              onClick={() => handeDelete(item.id)}
+              onClick={() => handleDelete(item.id)}
             />
           </li>
         ))
