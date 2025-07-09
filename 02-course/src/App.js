@@ -19,7 +19,7 @@ function App() {
   };
   useEffect(() => {
     console.log("Load Time");
-  }, []);
+  }, [items]);
   const handleChange = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
