@@ -2,7 +2,7 @@ import React from "react";
 import { FaPlus } from "react-icons/fa";
 export const AddItems = ({ newItem, setNewItem, handleSubmit }) => {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="addItem">Add Item</label>
       <input
         autoFocus
@@ -10,7 +10,9 @@ export const AddItems = ({ newItem, setNewItem, handleSubmit }) => {
         id="addItem"
         placeholder="Add-Item"
         required
-      ></input>
+        value={newItem}
+        onChange={(e) => setNewItem(e.target.value)}
+      />
     </form>
   );
 };
