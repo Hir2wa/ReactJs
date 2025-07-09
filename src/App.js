@@ -44,6 +44,7 @@ function App() {
     setNewItem("");
   };
 
+  const [search, setSearch] = useState("");
   return (
     <div className="App">
       <Header title="Grocery List " />
