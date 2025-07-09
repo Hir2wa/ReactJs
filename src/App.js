@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import React, { useState } from "react";
 import "./App.css";
 import Header from "./Header";
@@ -6,35 +5,43 @@ import Content from "./Content";
 import Footer from "./Footer";
 import ListKeys from "./ListKeys";
 import { AddItems } from "./AddItems";
+
 function App() {
-  const [items, setItems] = useState([
-    { id: 1, item: "shoes", checked: true },
-    { id: 2, item: "t-shirt", checked: false },
-    { id: 3, item: "jacket", checked: true },
-  ]);
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem("ShoppingList")) || []
+  );
 
   const [newItem, setNewItem] = useState("");
 
-  const handleChange = (id) => {
-    const listItems = items.map((item) =>
-      item.id === id
-        ? {
-            ...item,
-            checked: !item.checked,
-          }
-        : item
-    );
-    setItems(listItems);
-    localStorage.setItem("Item-List", JSON.stringify(listItems));
+  const setAndSaveItem = (newItems) => {
+    setItems(newItems);
+    localStorage.setItem("ShoppingList", JSON.stringify(newItems));
   };
+
+  const handleChange = (id) => {
+    const updatedItems = items.map((item) =>
+      item.id === id ? { ...item, checked: !item.checked } : item
+    );
+    setAndSaveItem(updatedItems);
+  };
+
   const handleDelete = (id) => {
-    const listItems = items.filter((items) => items.id !== id);
-    setItems(listItems);
-    localStorage.setItem("Item-List", JSON.stringify(listItems));
+    const updatedItems = items.filter((item) => item.id !== id);
+    setAndSaveItem(updatedItems);
+  };
+
+  const addItem = () => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = { id, checked: false, item: newItem };
+    const updatedItems = [...items, myNewItem];
+    setAndSaveItem(updatedItems);
   };
 
   const handleSubmit = (e) => {
-    console.log("submitted succefully");
+    e.preventDefault();
+    if (!newItem) return;
+    addItem();
+    setNewItem("");
   };
 
   return (
@@ -45,7 +52,6 @@ function App() {
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}
       />
-      {/* <Content /> */}
       <ListKeys
         items={items}
         handleChange={handleChange}
