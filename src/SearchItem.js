@@ -1,7 +1,13 @@
 import React from "react";
 
 const SearchItem = () => {
-  return <div>SearchItem</div>;
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault;
+      }}
+    ></form>
+  );
 };
 
 export default SearchItem;
