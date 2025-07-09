@@ -1,2 +1,3 @@
 useEffect 
 perfome after only if the dependences have been updated 
+while  useState  change when youn call the setState method  
