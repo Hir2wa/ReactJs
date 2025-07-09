@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 import Header from "./Header";
 import Content from "./Content";
@@ -12,7 +12,7 @@ function App() {
   );
 
   const [newItem, setNewItem] = useState("");
-
+  const inputRef = useRef();
   const setAndSaveItem = (newItems) => {
     setItems(newItems);
     localStorage.setItem("ShoppingList", JSON.stringify(newItems));
@@ -55,7 +55,9 @@ function App() {
         handleSubmit={handleSubmit}
       />
       <ListKeys
-        items={items}
+        items={items.filter((item) =>
+          item.item.toLowerCase().includes(search.toLowerCase())
+        )}
         handleChange={handleChange}
         handleDelete={handleDelete}
       />
