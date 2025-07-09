@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 import Header from "./Header";
 import Content from "./Content";
@@ -17,7 +17,9 @@ function App() {
     setItems(newItems);
     localStorage.setItem("ShoppingList", JSON.stringify(newItems));
   };
-
+  useEffect(() => {
+    console.log("Load Time");
+  }, []);
   const handleChange = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
