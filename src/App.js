@@ -5,7 +5,7 @@ import Content from "./Content";
 import Footer from "./Footer";
 import ListKeys from "./ListKeys";
 import { AddItems } from "./AddItems";
-
+import SearchItem from "./SearchItem";
 function App() {
   const [items, setItems] = useState(
     JSON.parse(localStorage.getItem("ShoppingList")) || []
@@ -48,6 +48,7 @@ function App() {
   return (
     <div className="App">
       <Header title="Grocery List " />
+      <SearchItem search={search} setSearch={setSearch} />
       <AddItems
         newItem={newItem}
         setNewItem={setNewItem}
