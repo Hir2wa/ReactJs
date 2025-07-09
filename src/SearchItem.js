@@ -5,14 +5,14 @@ const SearchItem = ({ search, setSearch }) => {
     <form
       className="searchForm"
       onSubmit={(e) => {
-        e.preventDefault;
+        e.preventDefault();
       }}
     >
       <label htmlFor="search">search</label>
       <input
         id="search"
         type="text"
-        placeHolder="Search-Items"
+        placeholder="Search-Items"
         role="searchLabel"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
