@@ -7,7 +7,15 @@ const SearchItem = () => {
       onSubmit={(e) => {
         e.preventDefault;
       }}
-    ></form>
+    >
+      <label htmlFor="search">search</label>
+      <input
+        id="search"
+        type="text"
+        placeHolder="Search-Items"
+        role="searchLabel"
+      />
+    </form>
   );
 };
 
