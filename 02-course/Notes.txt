@@ -6,4 +6,5 @@ Json Server
 
 -keys are in form in string 
 -everyting is in the {}  showing is a json 
-
+- how to lunch server 
+"npx json-server -p 3500 -w data/db.json"
