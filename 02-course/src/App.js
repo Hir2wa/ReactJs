@@ -13,30 +13,27 @@ function App() {
 
   const [newItem, setNewItem] = useState("");
   const inputRef = useRef();
-  const setAndSaveItem = (newItems) => {
-    setItems(newItems);
-    localStorage.setItem("ShoppingList", JSON.stringify(newItems));
-  };
+
   useEffect(() => {
-    console.log("Load Time");
+    localStorage.setItem("ShoppingList", JSON.stringify(items));
   }, [items]);
   const handleChange = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
     );
-    setAndSaveItem(updatedItems);
+    setItems(updatedItems);
   };
 
   const handleDelete = (id) => {
     const updatedItems = items.filter((item) => item.id !== id);
-    setAndSaveItem(updatedItems);
+    setItems(updatedItems);
   };
 
   const addItem = () => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     const myNewItem = { id, checked: false, item: newItem };
     const updatedItems = [...items, myNewItem];
-    setAndSaveItem(updatedItems);
+    setItems(updatedItems);
   };
 
   const handleSubmit = (e) => {
