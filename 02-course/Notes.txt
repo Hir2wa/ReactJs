@@ -1,3 +1,10 @@
 useEffect 
 perfome after only if the dependences have been updated 
 while  useState  change when youn call the setState method  
+
+Json Server
+
+-keys are in form in string 
+-everyting is in the {}  showing is a json 
+- how to lunch server 
+"npx json-server -p 3500 -w data/db.json"
