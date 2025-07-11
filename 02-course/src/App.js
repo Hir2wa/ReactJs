@@ -14,12 +14,12 @@ function App() {
 
   const [newItem, setNewItem] = useState("");
   const inputRef = useRef();
-  const [fetchErro, setFecthError] = useState("");
+  const [fetchError, setFecthError] = useState(null);
   useEffect(() => {
     const fetchItems = async () => {
       try {
         const response = await fetch(APi_URL);
-        if (!response.ok) throw Error("Didn't Get Data ");
+        if (!response.ok) throw Error("didn't receive expected data ");
         const data = await response.json();
         setItems(data);
         console.log(data);
@@ -66,12 +66,14 @@ function App() {
         handleSubmit={handleSubmit}
       />
       <main>
+        {fetchError && <p style={{ color: "red" }}>{`Error:${fetchError}`}</p>}
         <ListKeys
           items={items.filter((item) =>
             item.item.toLowerCase().includes(search.toLowerCase())
           )}
           handleChange={handleChange}
           handleDelete={handleDelete}
+          fetchError={fetchError}
         />
       </main>
 
