@@ -7,7 +7,7 @@ import ListKeys from "./ListKeys";
 import { AddItems } from "./AddItems";
 import SearchItem from "./SearchItem";
 function App() {
-  const APi_URL = "http://localhost:3500/itemss";
+  const APi_URL = "http://localhost:3500/items";
   const [items, setItems] = useState(
     JSON.parse(localStorage.getItem("ShoppingList")) || []
   );
