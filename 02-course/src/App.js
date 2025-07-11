@@ -26,6 +26,8 @@ function App() {
         console.log(data);
       } catch (error) {
         setFecthError(error.message);
+      } finally {
+        isLoading(false);
       }
     };
     setTimeout(() => {
@@ -70,7 +72,9 @@ function App() {
       />
       <main>
         {isLoading && <p>Loading Items...</p>}
-        {fetchError && <p style={{ color: "red" }}>{`Error:${fetchError}`}</p>}
+        {fetchError && !isLoading && (
+          <p style={{ color: "red" }}>{`Error:${fetchError}`}</p>
+        )}
         <ListKeys
           items={items.filter((item) =>
             item.item.toLowerCase().includes(search.toLowerCase())
