@@ -15,6 +15,7 @@ function App() {
   const [newItem, setNewItem] = useState("");
   const inputRef = useRef();
   const [fetchError, setFecthError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchItems = async () => {
       try {
