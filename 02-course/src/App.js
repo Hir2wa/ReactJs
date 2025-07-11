@@ -19,13 +19,15 @@ function App() {
     const fetchItems = async () => {
       try {
         const response = await fetch(APi_URL);
-        const data = response.json();
+        if (!response.ok) throw Error("Expected Not Expected Data");
+        const data = await response.json();
         setItems(data);
         console.log(data);
       } catch (error) {
         console.log(error.stack);
       }
     };
+    fetchItems();
   }, []);
   const handleChange = (id) => {
     const updatedItems = items.map((item) =>
