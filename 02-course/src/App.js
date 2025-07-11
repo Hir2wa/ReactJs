@@ -14,7 +14,7 @@ function App() {
 
   const [newItem, setNewItem] = useState("");
   const inputRef = useRef();
-
+  const [fetchErro, setFecthError] = useState("");
   useEffect(() => {
     const fetchItems = async () => {
       try {
@@ -24,7 +24,7 @@ function App() {
         setItems(data);
         console.log(data);
       } catch (error) {
-        console.log(error.message);
+        setFecthError(error.message);
       }
     };
     fetchItems();
@@ -55,7 +55,7 @@ function App() {
     setNewItem("");
   };
 
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(null);
   return (
     <div className="App">
       <Header title="Grocery List " />
