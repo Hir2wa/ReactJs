@@ -15,10 +15,16 @@ function App() {
   const [newItem, setNewItem] = useState("");
   const inputRef = useRef();
 
-  useEffect(async () => {
+  useEffect(() => {
     const fetchItems = async () => {
-      const response = await fetch(APi_URL);
-      const data = response.json();
+      try {
+        const response = await fetch(APi_URL);
+        const data = response.json();
+        setItems(data);
+        console.log(data);
+      } catch (error) {
+        console.log(error.stack);
+      }
     };
   }, []);
   const handleChange = (id) => {
