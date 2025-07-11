@@ -65,13 +65,16 @@ function App() {
         setNewItem={setNewItem}
         handleSubmit={handleSubmit}
       />
-      <ListKeys
-        items={items.filter((item) =>
-          item.item.toLowerCase().includes(search.toLowerCase())
-        )}
-        handleChange={handleChange}
-        handleDelete={handleDelete}
-      />
+      <main>
+        <ListKeys
+          items={items.filter((item) =>
+            item.item.toLowerCase().includes(search.toLowerCase())
+          )}
+          handleChange={handleChange}
+          handleDelete={handleDelete}
+        />
+      </main>
+
       <Footer items={items} length={items.length} />
     </div>
   );
