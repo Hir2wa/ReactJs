@@ -1,12 +1,16 @@
 import { ItemList } from "./ItemList";
 
-const ListKeys = ({ items, handleChange, handleDelete }) => {
+const ListKeys = ({ items, handleChange, handleDelete, fetchError }) => {
   return (
-    <ItemList
-      items={items}
-      handleChange={handleChange}
-      handleDelete={handleDelete}
-    />
+    <>
+      {!fetchError && (
+        <ItemList
+          items={items}
+          handleChange={handleChange}
+          handleDelete={handleDelete}
+        />
+      )}
+    </>
   );
 };
 
