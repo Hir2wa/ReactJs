@@ -15,7 +15,12 @@ function App() {
   const [newItem, setNewItem] = useState("");
   const inputRef = useRef();
 
-  useEffect(() => {}, []);
+  useEffect(async () => {
+    const fetchItems = async () => {
+      const response = await fetch(APi_URL);
+      const data = response.json();
+    };
+  }, []);
   const handleChange = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
