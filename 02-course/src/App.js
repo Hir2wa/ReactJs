@@ -19,7 +19,7 @@ function App() {
     const fetchItems = async () => {
       try {
         const response = await fetch(APi_URL);
-        if (!response.ok) throw Error("Expected Not Expected Data");
+        if (!response.ok) throw Error("Didn't Get Data ");
         const data = await response.json();
         setItems(data);
         console.log(data);
