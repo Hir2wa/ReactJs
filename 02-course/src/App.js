@@ -7,7 +7,7 @@ import ListKeys from "./ListKeys";
 import { AddItems } from "./AddItems";
 import SearchItem from "./SearchItem";
 function App() {
-  const APi_Url = "http://localhost:3500/items";
+  const APi_URL = "http://localhost:3500/items";
   const [items, setItems] = useState(
     JSON.parse(localStorage.getItem("ShoppingList")) || []
   );
@@ -15,9 +15,7 @@ function App() {
   const [newItem, setNewItem] = useState("");
   const inputRef = useRef();
 
-  useEffect(() => {
-    localStorage.setItem("ShoppingList", JSON.stringify(items));
-  }, [items]);
+  useEffect(() => {}, []);
   const handleChange = (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
