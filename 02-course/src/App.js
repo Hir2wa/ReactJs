@@ -28,7 +28,9 @@ function App() {
         setFecthError(error.message);
       }
     };
-    fetchItems();
+    setTimeout(() => {
+      fetchItems();
+    }, 2000);
   }, []);
   const handleChange = (id) => {
     const updatedItems = items.map((item) =>
@@ -67,6 +69,7 @@ function App() {
         handleSubmit={handleSubmit}
       />
       <main>
+        {isLoading && <p>Loading Items...</p>}
         {fetchError && <p style={{ color: "red" }}>{`Error:${fetchError}`}</p>}
         <ListKeys
           items={items.filter((item) =>
