@@ -24,7 +24,7 @@ function App() {
         setItems(data);
         console.log(data);
       } catch (error) {
-        console.log(error.stack);
+        console.log(error.message);
       }
     };
     fetchItems();
