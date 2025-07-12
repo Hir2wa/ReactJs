@@ -51,9 +51,15 @@ function App() {
     if (result) setFecthError(result);
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     const updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
+    const deleteOption = {
+      method: "DELETE",
+    };
+    const reqURL = `${APi_URL}/${id}`;
+    const result = await apiRequest(reqURL, deleteOption);
+    if (result) setFecthError(result);
   };
 
   const addItem = async () => {
