@@ -61,6 +61,7 @@ function App() {
       body: JSON.stringify(myNewItem),
     };
     const result = await apiRequest(APi_URL, postOptions);
+    if (result) fetchError(result);
   };
 
   const handleSubmit = (e) => {
