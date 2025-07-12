@@ -48,7 +48,7 @@ function App() {
     };
     const reqURL = `${APi_URL}/${id}`;
     const result = apiRequest(reqURL, updateItem);
-    if (result) fetchError(result);
+    if (result) setFecthError(result);
   };
 
   const handleDelete = (id) => {
@@ -70,7 +70,7 @@ function App() {
       body: JSON.stringify(myNewItem),
     };
     const result = await apiRequest(APi_URL, postOptions);
-    if (result) fetchError(result);
+    if (result) setFecthError(result);
   };
 
   const handleSubmit = (e) => {
