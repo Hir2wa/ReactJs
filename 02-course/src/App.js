@@ -35,7 +35,7 @@ function App() {
       fetchItems();
     }, 2000);
   }, []);
-  const handleChange = (id) => {
+  const handleChange = async (id) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
     );
@@ -47,7 +47,7 @@ function App() {
       body: JSON.stringify({ checked: myItem[0].checked }),
     };
     const reqURL = `${APi_URL}/${id}`;
-    const result = apiRequest(reqURL, updateItem);
+    const result = await apiRequest(reqURL, updateItem);
     if (result) setFecthError(result);
   };
 
