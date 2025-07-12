@@ -28,7 +28,7 @@ function App() {
       } catch (error) {
         setFecthError(error.message);
       } finally {
-        isLoading(false);
+        setIsLoading(false);
       }
     };
     setTimeout(() => {
@@ -52,6 +52,13 @@ function App() {
     const myNewItem = { id, checked: false, item: newItem };
     const updatedItems = [...items, myNewItem];
     setItems(updatedItems);
+
+    const postOptions = {
+      method: "POST",
+      header: {
+        " content-type": "application/json",
+      },
+    };
   };
 
   const handleSubmit = (e) => {
