@@ -7,7 +7,6 @@ import ListKeys from "./ListKeys";
 import { AddItems } from "./AddItems";
 import SearchItem from "./SearchItem";
 import apiRequest from "./apiRequest";
-import { json } from "express";
 function App() {
   const APi_URL = "http://localhost:3500/items";
   const [items, setItems] = useState(
@@ -47,6 +46,9 @@ function App() {
       "content-type": "application/json",
       body: JSON.stringify({ checked: myItem[0].checked }),
     };
+    const reqURL = `${APi_URL}/${id}`;
+    const result = apiRequest(reqURL, updateItem);
+    if (result) fetchError(result);
   };
 
   const handleDelete = (id) => {
