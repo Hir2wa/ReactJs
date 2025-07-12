@@ -8,3 +8,5 @@ const apiRequest = async (url = "", optObj = null, errorMsg = null) => {
     return errorMsg;
   }
 };
+
+export default apiRequest;
