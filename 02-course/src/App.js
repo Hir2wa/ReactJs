@@ -7,6 +7,7 @@ import ListKeys from "./ListKeys";
 import { AddItems } from "./AddItems";
 import SearchItem from "./SearchItem";
 import apiRequest from "./apiRequest";
+import { json } from "express";
 function App() {
   const APi_URL = "http://localhost:3500/items";
   const [items, setItems] = useState(
@@ -43,6 +44,8 @@ function App() {
     const myItem = updatedItems.filter((item) => item.id === id);
     const updateItem = {
       method: "PATCH",
+      "content-type": "application/json",
+      body: JSON.stringify({ checked: myItem[0].checked }),
     };
   };
 
