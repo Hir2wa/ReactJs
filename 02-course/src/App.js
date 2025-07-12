@@ -40,6 +40,10 @@ function App() {
       item.id === id ? { ...item, checked: !item.checked } : item
     );
     setItems(updatedItems);
+    const myItem = updatedItems.filter((item) => item.id === id);
+    const updateItem = {
+      method: "PATCH",
+    };
   };
 
   const handleDelete = (id) => {
