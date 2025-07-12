@@ -47,7 +47,7 @@ function App() {
     setItems(updatedItems);
   };
 
-  const addItem = () => {
+  const addItem = async () => {
     const id = items.length ? items[items.length - 1].id + 1 : 1;
     const myNewItem = { id, checked: false, item: newItem };
     const updatedItems = [...items, myNewItem];
@@ -58,7 +58,9 @@ function App() {
       header: {
         " content-type": "application/json",
       },
+      body: JSON.stringify(myNewItem),
     };
+    const result = await apiRequest(APi_URL, postOptions);
   };
 
   const handleSubmit = (e) => {
