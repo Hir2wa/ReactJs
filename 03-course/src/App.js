@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Home from "./Home";
 import NewPost from "./NewPost";
 import Post from "./Post";
-import Missing from "./Missing ";
+import Missing from "./Missing";
 import About from "./About";
 import { Route, Switch, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
