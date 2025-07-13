@@ -6,27 +6,20 @@ import NewPost from "./NewPost";
 import PostPage from "./PostPage";
 import Missing from "./Missing";
 import About from "./About";
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Routes, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 function App() {
   return (
     <div className="App">
       <Header />
       <Nav />
-      <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
-        <Route path="/post">
-          <PostPage />
-        </Route>
-        <Route path="post/:id">
-          <NewPost />
-        </Route>
-
-        <About />
-        <Missing />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/post" element={<PostPage />} />
+        <Route path="post/:id" element={<NewPost />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/*" element={<Missing />} />
+      </Routes>
 
       <Footer />
     </div>
