@@ -9,6 +9,8 @@ import About from "./About";
 import { Route, Routes, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 function App() {
+  const [search, setSearch] = useState("");
+  const [post, setPost] = useState([]);
   return (
     <div className="App">
       <Header title="React Blog" />
