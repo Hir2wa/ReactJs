@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import Footer from "./Footer";
 import Home from "./Home";
 import NewPost from "./NewPost";
-import Post from "./Post";
+import PostPage from "./PostPage";
 import Missing from "./Missing";
 import About from "./About";
 import { Route, Switch, useHistory } from "react-router-dom";
@@ -13,11 +13,14 @@ function App() {
     <div className="App">
       <Header />
       <Nav />
-      <Home />
-      <Post />
-      <NewPost />
-      <About />
-      <Missing />
+      <Switch>
+        <Home />
+        <PostPage />
+        <NewPost />
+        <About />
+        <Missing />
+      </Switch>
+
       <Footer />
     </div>
   );
