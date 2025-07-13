@@ -14,9 +14,16 @@ function App() {
       <Header />
       <Nav />
       <Switch>
-        <Home />
-        <PostPage />
-        <NewPost />
+        <Route path="/">
+          <Home />
+        </Route>
+        <Route path="/post">
+          <PostPage />
+        </Route>
+        <Route path="post/:id">
+          <NewPost />
+        </Route>
+
         <About />
         <Missing />
       </Switch>
