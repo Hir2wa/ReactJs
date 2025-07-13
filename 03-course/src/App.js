@@ -9,7 +9,17 @@ import About from "./About";
 import { Route, Switch, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 function App() {
-  return <p>Hello</p>;
+  return (
+    <div className="App">
+      <Header />
+      <Nav />
+      <Home />
+      <Post />
+      <NewPost />
+      <About />
+      <Missing />
+      <Footer />
+    </div>
+  );
 }
-
 export default App;
