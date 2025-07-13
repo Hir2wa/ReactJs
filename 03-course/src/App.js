@@ -6,7 +6,8 @@ import NewPost from "./NewPost";
 import Post from "./Post";
 import Missing from "./Missing ";
 import About from "./About";
-
+import { Route, Switch, useHistory } from "react-router-dom";
+import { useState, useEffect } from "react";
 function App() {
   return <p>Hello</p>;
 }
