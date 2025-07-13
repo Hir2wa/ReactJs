@@ -42,6 +42,7 @@ function App() {
       body: "React Hooks changed everything. Learn to manage state and side effects like a pro.",
     },
   ]);
+  const [searchResult, setSearchResult] = useState([]);
   return (
     <div className="App">
       <Header title="React Blog" />
