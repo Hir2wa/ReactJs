@@ -1,4 +1,4 @@
-import 
+import Header from "./Header";
 function App() {
   return <p>Hello</p>;
 }
