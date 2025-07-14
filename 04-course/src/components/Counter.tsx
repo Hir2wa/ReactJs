@@ -9,7 +9,7 @@ export const Counter = ({ children, setCounter }: CounterProp) => {
     <>
       <p> {children}</p>
       <button onClick={() => setCounter((prev) => prev + 1)}>+</button>
-      <button onClick={() => setCounter((prev) => prev + 1)}>-</button>
+      <button onClick={() => setCounter((prev) => prev - 1)}>-</button>
     </>
   );
 };
