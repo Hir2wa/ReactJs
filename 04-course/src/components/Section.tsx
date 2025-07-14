@@ -6,7 +6,7 @@ type SectionProps = {
 };
 
 export const Section = ({
-  title = "Hello World",
+  title = "heading one ",
   children,
 }: SectionProps): ReactElement => {
   return (
