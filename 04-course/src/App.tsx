@@ -1,9 +1,10 @@
 import { Heading } from "./components/Heading";
 import { Section } from "./components/Section";
 import { useState } from "react";
+import { Counter } from "./components/Counter";
 
 const [counter, setCounter] = useState<number>(1);
-function App(setCounter = { setCounter }) {
+function App() {
   return (
     <>
       <Heading title="Hello World" />
@@ -11,6 +12,7 @@ function App(setCounter = { setCounter }) {
         {" "}
         these is my section{" "}
       </Section>
+      <Counter setCounter={setCounter}>{counter}</Counter>
     </>
   );
 }
