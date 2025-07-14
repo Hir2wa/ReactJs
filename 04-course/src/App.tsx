@@ -1,6 +1,9 @@
 import { Heading } from "./components/Heading";
 import { Section } from "./components/Section";
-function App() {
+import { useState } from "react";
+
+const [counter, setCounter] = useState<number>(1);
+function App(setCounter = { setCounter }) {
   return (
     <>
       <Heading title="Hello World" />
