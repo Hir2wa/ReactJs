@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 
-type PropList = {
+type PropList<T> = {
   items: T[];
   render: (item: T) => ReactNode;
 };
