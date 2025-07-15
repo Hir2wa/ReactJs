@@ -11,7 +11,7 @@ function App() {
       <Section title="...">....</Section>
       <Counter setCounter={setCounter}>{counter}</Counter>
       <List
-        items={["cofffe", "tocs", "mild"]}
+        items={["cofffe", "tocs", "milk"]}
         render={(item: string) => <span className="food"> {item}</span>}
       />
     </>
