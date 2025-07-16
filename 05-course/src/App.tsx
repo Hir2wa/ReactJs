@@ -1,8 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  interface user {
+    id: number;
+    userName: string;
+  }
+  const [count, setCount] = useState<number>(0);
+  const [user, setUser] = useState<user | null>(null);
+  useEffect(() => {
+    console.log("Mounted");
+  });
   return <div className="App"></div>;
 }
 
