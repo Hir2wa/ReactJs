@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 
 function App() {
   interface user {
@@ -10,6 +10,8 @@ function App() {
     if (n < 2) return n;
     return fibFunc(n - 1) + fibFunc(n - 2);
   };
+  const myNum = 37;
+  const result = useMemo(() => fibFunc(myNum), [myNum]);
   const [count, setCount] = useState<number>(0);
   const [count1, setCount1] = useState<number>(0);
   useEffect(() => {
