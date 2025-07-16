@@ -18,7 +18,11 @@ function App() {
       clearInterval(interval);
     };
   }, []);
-  return <p> {count}</p>;
+  return (
+    <>
+      <p> {count}</p>
+    </>
+  );
 }
 
 export default App;
