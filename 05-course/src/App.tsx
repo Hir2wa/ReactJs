@@ -9,6 +9,7 @@ function App() {
   const [user, setUser] = useState<user | null>(null);
   useEffect(() => {
     console.log("Mounted");
+    console.log("users:" + user);
   });
   return <div className="App"></div>;
 }
