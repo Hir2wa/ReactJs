@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 function App() {
   interface user {
@@ -6,12 +6,19 @@ function App() {
     userName: string;
   }
   const [count, setCount] = useState<number>(0);
-  const [user, setUser] = useState<user | null>(null);
+
   useEffect(() => {
-    console.log("Mounted");
-    console.log("users:" + user);
-  });
-  return <div className="App"></div>;
+    const interval = setInterval(() => {
+      setCount((prev) => prev + 1);
+    }, 1000);
+
+    return () => {
+      console.log("unmounted");
+
+      clearInterval(interval);
+    };
+  }, []);
+  return <p> {count}</p>;
 }
 
 export default App;
