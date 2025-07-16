@@ -5,6 +5,11 @@ function App() {
     id: number;
     userName: string;
   }
+  type fic = (n: number) => number;
+  const fibFunc: fic = (n) => {
+    if (n < 2) return n;
+    return fibFunc(n - 1) + fibFunc(n - 2);
+  };
   const [count, setCount] = useState<number>(0);
   const [count1, setCount1] = useState<number>(0);
   useEffect(() => {
