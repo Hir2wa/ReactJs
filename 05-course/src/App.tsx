@@ -17,6 +17,7 @@ function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => prev + 1);
+      alert(count1);
     }, 1000);
 
     return () => {
