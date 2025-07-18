@@ -14,9 +14,15 @@ function App() {
   const result = useMemo(() => fibFunc(myNum), [myNum]);
   const [count, setCount] = useState<number>(0);
   const [count1, setCount1] = useState<number>(0);
+  // const inputRef = useRef<HTMLInputElement>(null);
+  // console.log(inputRef.current?.value);
+  // console.log(inputRef.current);
+
   const inputRef = useRef<HTMLInputElement>(null);
-  console.log(inputRef.current?.value);
-  console.log(inputRef.current);
+
+  const focusInput = () => {
+    inputRef.current?.focus();
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,7 +41,7 @@ function App() {
       <p> {count}</p>
       <button onClick={addOne}> {count1}</button>
       <p>{result}</p>
-      <input ref={inputRef} type="text" />
+      <input type="text" />
     </>
   );
 }
