@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 
 function App() {
   interface user {
@@ -14,6 +14,10 @@ function App() {
   const result = useMemo(() => fibFunc(myNum), [myNum]);
   const [count, setCount] = useState<number>(0);
   const [count1, setCount1] = useState<number>(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  console.log(inputRef.current?.value);
+  console.log(inputRef.current);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prev) => prev + 1);
@@ -32,7 +36,7 @@ function App() {
       <p> {count}</p>
       <button onClick={addOne}> {count1}</button>
       <p>{result}</p>
-      <input ref={} type="text">
+      <input ref={inputRef} type="text" />
     </>
   );
 }
