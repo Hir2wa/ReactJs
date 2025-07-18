@@ -41,7 +41,8 @@ function App() {
       <p> {count}</p>
       <button onClick={addOne}> {count1}</button>
       <p>{result}</p>
-      <input type="text" />
+      <input type="text" ref={inputRef} />
+      <button onClick={focusInput}>Focus Input</button>
     </>
   );
 }
