@@ -32,6 +32,7 @@ function App() {
       <p> {count}</p>
       <button onClick={addOne}> {count1}</button>
       <p>{result}</p>
+      <input ref={}></input>
     </>
   );
 }
