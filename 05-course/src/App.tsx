@@ -14,9 +14,9 @@ function App() {
   const result = useMemo(() => fibFunc(myNum), [myNum]);
   const [count, setCount] = useState<number>(0);
   const [count1, setCount1] = useState<number>(0);
-  // const inputRef = useRef<HTMLInputElement>(null);
-  // console.log(inputRef.current?.value);
-  // console.log(inputRef.current);
+  const inputReff = useRef<HTMLInputElement>(null);
+  console.log(inputReff.current?.value);
+  console.log(inputReff.current);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
