@@ -2,15 +2,17 @@ import React, { Children, useReducer, type ReactNode } from "react";
 
 // ✅ Using const + union instead of enum
 
-const initialState = { count: 0 };
+const initialState = { count: 0, text: "" };
 
 const initState = { count: 0 };
 const enum REDUCER_ACTION_TYPE {
   INCREMENT,
   DECREMENT,
+  NEW_INPUT,
 }
 type ReducerAction = {
   type: REDUCER_ACTION_TYPE;
+  payload?: string;
 };
 
 type childrenType = {
@@ -26,6 +28,8 @@ const reducer = (
 
     case REDUCER_ACTION_TYPE.DECREMENT:
       return { ...state, count: state.count - 1 };
+    case REDUCER_ACTION_TYPE.DECREMENT:
+      return { ...state, text: action.payload ?? "" };
     default:
       throw new Error("Error Encounted");
   }
