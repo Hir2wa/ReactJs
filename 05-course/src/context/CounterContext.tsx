@@ -1,6 +1,5 @@
 import { createContext, type ReactNode } from "react";
 
-const initState = { count: 0, text: "" };
 type StateType = {
   count: number;
   text: string;
@@ -18,10 +17,7 @@ type ReducerAction = {
 type childrenType = {
   children: (count: number) => ReactNode;
 };
-const reducer = (
-  state: typeof initState,
-  action: ReducerAction
-): typeof initState => {
+const reducer = (state: StateType, action: ReducerAction): StateType => {
   switch (action.type) {
     case REDUCER_ACTION_TYPE.INCREMENT:
       return { ...state, count: state.count + 1 };
