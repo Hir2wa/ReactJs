@@ -48,4 +48,6 @@ const useCounterContext = (initState: StateType) => {
       payload: e.target.value,
     });
   };
+
+  return { state, increment, decrememt, handleTextInput };
 };
