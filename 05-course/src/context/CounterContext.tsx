@@ -1,8 +1,11 @@
 import {
+  Children,
   createContext,
   useReducer,
   type ChangeEvent,
+  type ReactElement,
   type ReactNode,
+  useCallback,
 } from "react";
 
 type StateType = {
@@ -40,7 +43,10 @@ const reducer = (state: StateType, action: ReducerAction): StateType => {
 
 const useCounterContext = (initState: StateType) => {
   const [state, despatch] = useReducer(reducer, initState);
-  const increment = () => despatch({ type: REDUCER_ACTION_TYPE.INCREMENT });
+  const increment = useCallback(
+    () => despatch({ type: REDUCER_ACTION_TYPE.INCREMENT }),
+    []
+  );
   const decrememt = () => despatch({ type: REDUCER_ACTION_TYPE.DECREMENT });
   const handleTextInput = (e: ChangeEvent<HTMLInputElement>) => {
     despatch({
@@ -61,3 +67,19 @@ const initcontextState: useCounterContextType = {
 };
 export const CounterContext =
   createContext<useCounterContextType>(initcontextState);
+type CounterProviderProps = {
+  children: ReactNode;
+} & StateType;
+
+export const CounterProvider = ({
+  children,
+  count,
+  text,
+}: CounterProviderProps): ReactElement => {
+  const stateValue = useCounterContext({ count, text });
+  return (
+    <CounterContext.Provider value={stateValue}>
+      {children}
+    </CounterContext.Provider>
+  );
+};
