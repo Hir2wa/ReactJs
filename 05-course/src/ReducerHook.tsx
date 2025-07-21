@@ -4,7 +4,7 @@ import React, { Children, useReducer, type ReactNode } from "react";
 
 const initialState = { count: 0 };
 
-function reducer() {}
+
 const initState = { count: 0}
 const enum REDUCER_ACTION_TYPE {
   INCREMENT,
@@ -13,6 +13,9 @@ const enum REDUCER_ACTION_TYPE {
  type ReducerAction  = {
   type: REDUCER_ACTION_TYPE
 }
+
+function reducer(state: typeof initState
+) {}
 
 export const ReducerHook = () => {
   
