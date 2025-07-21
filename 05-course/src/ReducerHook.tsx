@@ -29,6 +29,9 @@ const enum REDUCER_ACTION_TYPE {
   }
  
 }
+const [state, despatch] = useReducer(reducer, initState)
+const increment = ()=> despatch({type: REDUCER_ACTION_TYPE.INCREMENT})
+const decrememt = ()=> despatch({type: REDUCER_ACTION_TYPE.DECREMENT})
 
 export const ReducerHook = () => {
   
