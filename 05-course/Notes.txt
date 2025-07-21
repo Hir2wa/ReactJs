@@ -3,3 +3,6 @@
 | ✅ **Props Drilling** | When you pass props from parent → child → child → child just to use it deep down… this gets messy real quick. |
 | ✅ **Global State**   | Some values (like user auth, theme, language) are used in many places. You want a single source of truth.     |
 | ✅ **Context API**    | React’s built-in way to make state and functions *available anywhere* in the app — without prop hell.         |
+
+
+// everyContext neeeds a provider 
