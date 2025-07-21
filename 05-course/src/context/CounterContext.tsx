@@ -1,9 +1,16 @@
-import { createContext, type ReactNode } from "react";
+import {
+  createContext,
+  useReducer,
+  type ChangeEvent,
+  type ReactNode,
+} from "react";
 
 type StateType = {
   count: number;
   text: string;
 };
+
+const initState: StateType = { count: 0, text: "" };
 const enum REDUCER_ACTION_TYPE {
   INCREMENT,
   DECREMENT,
@@ -29,4 +36,16 @@ const reducer = (state: StateType, action: ReducerAction): StateType => {
     default:
       throw new Error("Error Encounted");
   }
+};
+
+const useCounterContext = (initState: StateType) => {
+  const [state, despatch] = useReducer(reducer, initState);
+  const increment = () => despatch({ type: REDUCER_ACTION_TYPE.INCREMENT });
+  const decrememt = () => despatch({ type: REDUCER_ACTION_TYPE.DECREMENT });
+  const handleTextInput = (e: ChangeEvent<HTMLInputElement>) => {
+    despatch({
+      type: REDUCER_ACTION_TYPE.NEW_INPUT,
+      payload: e.target.value,
+    });
+  };
 };
