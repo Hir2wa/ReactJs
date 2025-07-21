@@ -14,8 +14,15 @@ const enum REDUCER_ACTION_TYPE {
   type: REDUCER_ACTION_TYPE
 }
 
-function reducer(state: typeof initState
-) {}
+  const reducer =(state: typeof initState , action: ReducerAction
+) : typeof initState  =>{
+
+  switch (action.type){
+
+    case REDUCER_ACTION_TYPE.INCREMENT :
+      return {...state , count: state.count + 1}
+  }
+}
 
 export const ReducerHook = () => {
   
