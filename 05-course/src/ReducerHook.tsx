@@ -25,16 +25,17 @@ const reducer = (
       return { ...state, count: state.count + 1 };
 
     case REDUCER_ACTION_TYPE.DECREMENT:
-      return { ...state, count: state.count + 1 };
+      return { ...state, count: state.count - 1 };
     default:
       throw new Error("Error Encounted");
   }
 };
-const [state, despatch] = useReducer(reducer, initState);
-const increment = () => despatch({ type: REDUCER_ACTION_TYPE.INCREMENT });
-const decrememt = () => despatch({ type: REDUCER_ACTION_TYPE.DECREMENT });
 
 export const ReducerHook = ({ children }: childrenType) => {
+  const [state, despatch] = useReducer(reducer, initState);
+  const increment = () => despatch({ type: REDUCER_ACTION_TYPE.INCREMENT });
+  const decrememt = () => despatch({ type: REDUCER_ACTION_TYPE.DECREMENT });
+
   return (
     <>
       <h1>{children(state.count)}</h1>
