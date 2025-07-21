@@ -1,5 +1,8 @@
 import { useEffect, useState, useCallback, useMemo, useRef } from "react";
 import { ReducerHook } from "./ReducerHook";
+import { CounterProvider } from "./context/CounterContext";
+import initState from "./context/CounterContext";
+
 function App() {
   interface user {
     id: number;
@@ -38,6 +41,10 @@ function App() {
   const addOne = useCallback(() => setCount1((prev) => prev + 1), []);
   return (
     <>
+      <CounterProvider count = {initState.count} text = {initState.state}>
+        <count>{(num: number) = <>Current Count {num}</>}</count>
+      </CounterProvider>
+
       <p> {count}</p>
       <button onClick={addOne}> {count1}</button>
       <p>{result}</p>

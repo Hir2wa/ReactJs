@@ -83,3 +83,5 @@ export const CounterProvider = ({
     </CounterContext.Provider>
   );
 };
+
+export default initState;
