@@ -1,7 +1,10 @@
 import { createContext, type ReactNode } from "react";
 
 const initState = { count: 0, text: "" };
-
+type StateType = {
+  count: number;
+  text: string;
+};
 const enum REDUCER_ACTION_TYPE {
   INCREMENT,
   DECREMENT,
