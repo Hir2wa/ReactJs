@@ -43,7 +43,9 @@ function App() {
       <p>{result}</p>
       <input type="text" ref={inputRef} />
       <button onClick={focusInput}>Focus Input</button>
-      <ReducerHook />
+      <ReducerHook>
+        {(count) => <span>Current count: {count}</span>}
+      </ReducerHook>
     </>
   );
 }
