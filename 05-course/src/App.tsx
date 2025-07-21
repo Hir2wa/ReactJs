@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback, useMemo, useRef } from "react";
-
+import { ReducerHook } from "./ReducerHook";
 function App() {
   interface user {
     id: number;
@@ -43,6 +43,7 @@ function App() {
       <p>{result}</p>
       <input type="text" ref={inputRef} />
       <button onClick={focusInput}>Focus Input</button>
+      <ReducerHook />
     </>
   );
 }
