@@ -38,21 +38,21 @@ function App() {
       clearInterval(interval);
     };
   }, []);
-  const addOne = useCallback(() => setCount1((prev) => prev + 1), []);
+  // const addOne = useCallback(() => setCount1((prev) => prev + 1), []);
   return (
     <>
       {/* <CounterProvider count = {initState.count} text = {initState.state}>
         <count>{(num: number) = <>Current Count {num}</>}</count>
       </CounterProvider> */}
 
-      <p> {count}</p>
+      {/* <p> {count}</p>
       <button onClick={addOne}> {count1}</button>
       <p>{result}</p>
       <input type="text" ref={inputRef} />
       <button onClick={focusInput}>Focus Input</button>
       <ReducerHook>
         {(count) => <span>Current count: {count}</span>}
-      </ReducerHook>
+      </ReducerHook> */}
     </>
   );
 }
