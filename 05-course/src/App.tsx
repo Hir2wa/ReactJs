@@ -41,9 +41,9 @@ function App() {
   const addOne = useCallback(() => setCount1((prev) => prev + 1), []);
   return (
     <>
-      <CounterProvider count = {initState.count} text = {initState.state}>
+      {/* <CounterProvider count = {initState.count} text = {initState.state}>
         <count>{(num: number) = <>Current Count {num}</>}</count>
-      </CounterProvider>
+      </CounterProvider> */}
 
       <p> {count}</p>
       <button onClick={addOne}> {count1}</button>
