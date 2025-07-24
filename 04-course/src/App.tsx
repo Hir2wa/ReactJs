@@ -3,6 +3,7 @@ import { Section } from "./components/Section";
 import { useState } from "react";
 import { Counter } from "./components/Counter";
 import { List } from "./components/List";
+import { ComponentA } from "./ComponentA";
 function App() {
   const [counter, setCounter] = useState<number>(1);
   return (
