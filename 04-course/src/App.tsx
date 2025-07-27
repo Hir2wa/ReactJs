@@ -3,9 +3,10 @@ import { Section } from "./components/Section";
 import { useState } from "react";
 import { Counter } from "./components/Counter";
 import { List } from "./components/List";
-import { ComponentA } from "./ComponentA";
+import { ComponentD } from "./ComponentD";
 import { createContext } from "react";
-export const UserContext = createContext();
+import { ComponentB } from "./ComponentB";
+export const UserContext = createContext<String>("");
 function App() {
   const [user, setUser] = useState("Alain");
   const [counter, setCounter] = useState<number>(1);
@@ -18,7 +19,10 @@ function App() {
         items={["cofffe", "tocs", "milk"]}
         render={(item: string) => <span className="food"> {item}</span>}
       /> */}
-      <UserContext.Provider value={user}></UserContext.Provider>
+      <UserContext.Provider value={user}>
+        <ComponentD />
+        <ComponentB />
+      </UserContext.Provider>
     </>
   );
 }
