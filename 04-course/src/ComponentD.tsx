@@ -1,5 +1,8 @@
 import React from "react";
-
+import { UserContext } from "./App";
+import { useContext } from "react";
 export const ComponentD = () => {
-  return <div>ComponentB</div>;
+  const user = useContext(UserContext);
+
+  return <p>`Hello ${user}`</p>;
 };
