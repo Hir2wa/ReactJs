@@ -4,5 +4,5 @@ import { useContext } from "react";
 export const ComponentD = () => {
   const user = useContext(UserContext);
 
-  return <p>`Hello ${user}`</p>;
+  return <p>Hello {user}</p>;
 };
