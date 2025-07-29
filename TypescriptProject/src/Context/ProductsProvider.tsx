@@ -1,4 +1,4 @@
-import { Children, createContext, useState, type ReactElement } from "react";
+import { Children, createContext, useState, type ReactElement , useEffect } from "react";
 
 export type ProductType = {
   sku: string;
@@ -6,23 +6,23 @@ export type ProductType = {
   price: number;
 };
 
-const initState: ProductType[] = [
-  {
-    sku: "item0001",
-    name: "Widget",
-    price: 9.99,
-  },
-  {
-    sku: "item0002",
-    name: "Premium Widget",
-    price: 9.99,
-  },
-  {
-    sku: "item0003",
-    name: "Deluxe Widget",
-    price: 9.99,
-  },
-];
+// const initState: ProductType[] = [
+//   {
+//     sku: "item0001",
+//     name: "Widget",
+//     price: 9.99,
+//   },
+//   {
+//     sku: "item0002",
+//     name: "Premium Widget",
+//     price: 9.99,
+//   },
+//   {
+//     sku: "item0003",
+//     name: "Deluxe Widget",
+//     price: 9.99,
+//   },
+// ];
 
 export type UseProductContextType = { product: ProductType[] };
 const initContextState: UseProductContextType = { product: [] };
@@ -42,4 +42,4 @@ export const ProductProvider = ({ children }: ChildrenType): ReactElement => {
 };
 
 
-export de
+export 
