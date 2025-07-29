@@ -6,3 +6,10 @@ export type CartItemType = {
 };
 type CartStateType = { cart: CartItemType[] };
 const initCartState: CartStateType = { cart: [] };
+
+const REDUCER_ACTION_TYPE = {
+  ADD: "ADD",
+  REMOVE: "REMOVE",
+  QUANTITY: "QUANTITY",
+  SUBMIT: "SUBMIT",
+};
