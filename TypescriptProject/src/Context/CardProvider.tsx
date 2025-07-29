@@ -1,5 +1,5 @@
 export type CartItemType = {
-  sky: string;
+  sku: string;
   name: string;
   price: number;
   qty: number;
@@ -28,15 +28,24 @@ const reducer = (
       if (!action.payload) {
         throw new Error("action.payload missing in Add action");
       }
+      const { sku, name, price } = action.payload;
+      const filteredCart: CartItemType[] = state.cart.filter(
+        (item) => item.sku !== sku
+      );
+      const itemExists: CartItemType | undefined = state.cart.find(
+        (item) => item.sku
+      );
+      const qty: number = itemExists ? itemExists.qty + 1 : 1;
+      return { ...state, cart: [...filteredCart, { sku, name, price, qty }] };
     }
     case REDUCER_ACTION_TYPE.QUANTITY: {
       if (!action.payload) {
-        throw new Error("action.payload missing in Add action");
+        throw new Error("action.payload missing in QUANTITY action");
       }
     }
     case REDUCER_ACTION_TYPE.REMOVE: {
       if (!action.payload) {
-        throw new Error("action.payload missing in Add action");
+        throw new Error("action.payload missing in REMOVE action");
       }
     }
     case REDUCER_ACTION_TYPE.SUBMIT: {
