@@ -16,6 +16,23 @@ const REDUCER_ACTION_TYPE = {
 
 export type ReducerActionType = typeof REDUCER_ACTION_TYPE;
 export type ReducerAction = {
-  action: string;
+  type: string;
   payload?: CartItemType;
+};
+const reducer = (
+  state: CartStateType,
+  action: ReducerAction
+): CartStateType => {
+  switch (action.type) {
+    case REDUCER_ACTION_TYPE.ADD: {
+    }
+    case REDUCER_ACTION_TYPE.QUANTITY: {
+    }
+    case REDUCER_ACTION_TYPE.REMOVE: {
+    }
+    case REDUCER_ACTION_TYPE.SUBMIT: {
+    }
+    default:
+      throw new Error("Things Going As Not Planned");
+  }
 };
