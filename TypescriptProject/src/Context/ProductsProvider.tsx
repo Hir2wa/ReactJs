@@ -32,8 +32,8 @@ export type ProductType = {
 
 const initState: ProductType[] = [];
 
-export type UseProductContextType = { product: ProductType[] };
-const initContextState: UseProductContextType = { product: [] };
+export type UseProductContextType = { products: ProductType[] };
+const initContextState: UseProductContextType = { products: [] };
 const ProductsContext = createContext<UseProductContextType>(initContextState);
 
 type ChildrenType = {
