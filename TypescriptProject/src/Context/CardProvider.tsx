@@ -5,3 +5,4 @@ export type CartItemType = {
   qty: number;
 };
 type CartStateType = { cart: CartItemType[] };
+const initCartState: CartStateType = { cart: [] };
