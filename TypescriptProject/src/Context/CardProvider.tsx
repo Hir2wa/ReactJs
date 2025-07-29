@@ -25,14 +25,24 @@ const reducer = (
 ): CartStateType => {
   switch (action.type) {
     case REDUCER_ACTION_TYPE.ADD: {
+      if (!action.payload) {
+        throw new Error("action.payload missing in Add action");
+      }
     }
     case REDUCER_ACTION_TYPE.QUANTITY: {
+      if (!action.payload) {
+        throw new Error("action.payload missing in Add action");
+      }
     }
     case REDUCER_ACTION_TYPE.REMOVE: {
+      if (!action.payload) {
+        throw new Error("action.payload missing in Add action");
+      }
     }
     case REDUCER_ACTION_TYPE.SUBMIT: {
+      return { ...state, cart: [] };
     }
     default:
-      throw new Error("Things Going As Not Planned");
+      throw new Error("Unidentified reducer action type");
   }
 };
