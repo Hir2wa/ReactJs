@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useMemo, useReducer } from "react";
 
 export type CartItemType = {
   sku: string;
@@ -79,4 +79,15 @@ const reducer = (
   }
 };
 
-const useCartContext = (initCartState: CartStateType) => {};
+const useCartContext = (initCartState: CartStateType) => {
+  const [state, dispach] = useReducer(reducer, initCartState);
+  const REDUCER_ACTIONS = useMemo(() => {
+    return REDUCER_ACTION_TYPE;
+  }, []);
+  const TotalItems: number = state.cart.reduce((prev, value) => {
+    return prev + value.qty;
+  }, 0);
+
+
+  const TotalItem = new 
+};
