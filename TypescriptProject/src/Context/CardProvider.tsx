@@ -96,4 +96,10 @@ const useCartContext = (initCartState: CartStateType) => {
       return prev + item.qty * item.price;
     }, 0)
   );
+
+  const cart = state.cart.sort((a, b) => {
+    const sortA = Number(a.sku.slice(-4));
+    const sortB = Number(b.sku.slice(-4));
+    return sortA - sortB;
+  });
 };
