@@ -1,3 +1,5 @@
+import { useReducer } from "react";
+
 export type CartItemType = {
   sku: string;
   name: string;
@@ -76,3 +78,5 @@ const reducer = (
       throw new Error("Unidentified reducer action type");
   }
 };
+
+const useCartContext = (initCartState: CartStateType) => {};
