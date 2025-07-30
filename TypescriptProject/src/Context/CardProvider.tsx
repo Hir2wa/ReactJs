@@ -91,5 +91,9 @@ const useCartContext = (initCartState: CartStateType) => {
   const TotalItem = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-  });
+  }).format(
+    state.cart.reduce((prev, item) => {
+      return prev + item.qty * item.price;
+    }, 0)
+  );
 };
