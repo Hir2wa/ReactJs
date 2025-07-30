@@ -88,6 +88,8 @@ const useCartContext = (initCartState: CartStateType) => {
     return prev + value.qty;
   }, 0);
 
-
-  const TotalItem = new 
+  const TotalItem = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
 };
