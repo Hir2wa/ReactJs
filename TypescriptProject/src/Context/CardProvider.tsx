@@ -88,7 +88,7 @@ const useCartContext = (initCartState: CartStateType) => {
     return prev + value.qty;
   }, 0);
 
-  const TotalItem = new Intl.NumberFormat("en-US", {
+  const TotalPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(
@@ -102,4 +102,5 @@ const useCartContext = (initCartState: CartStateType) => {
     const sortB = Number(b.sku.slice(-4));
     return sortA - sortB;
   });
+  return { dispach, REDUCER_ACTIONS, cart, TotalItems, TotalPrice };
 };
