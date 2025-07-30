@@ -104,3 +104,5 @@ const useCartContext = (initCartState: CartStateType) => {
   });
   return { dispach, REDUCER_ACTIONS, cart, TotalItems, TotalPrice };
 };
+
+export type UseCartContexttype = ReturnType<typeof useCartContext>;
