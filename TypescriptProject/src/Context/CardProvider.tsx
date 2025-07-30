@@ -63,6 +63,11 @@ const reducer = (
       if (!action.payload) {
         throw new Error("action.payload missing in REMOVE action");
       }
+      const { sku } = action.payload;
+      const filteredCart: CartItemType[] = state.cart.filter(
+        (item) => item.sku !== sku
+      );
+      return { ...state, cart: { ...filteredCart } };
     }
     case REDUCER_ACTION_TYPE.SUBMIT: {
       return { ...state, cart: [] };
