@@ -1,6 +1,6 @@
 //gona try my best to create a product context for now for sure
 
-import { createContext, useEffect, type ReactElement } from "react";
+import { createContext, useEffect, useState, type ReactElement } from "react";
 
 //how to create a context
 
@@ -15,18 +15,25 @@ type ChildrenType = {
 };
 
 const initProduct: ProductStateType = { product: [] };
+export const ProductContext = createContext(initProduct);
 
 const ProductProvider = ({ children }: ChildrenType): ReactElement => {
-    const 
-  useEffect( () => {
-    const fetchData = async () =>{
-        const data = await fetch("https://localhost:5500/products").then(
-            (res) => res.json
-          );
-          return data;
-    }
-   
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const fetchData = async (): Promise<ProductType[]> => {
+      const data = await fetch("https://localhost:5500/products")
+        .then((res) => res.json)
+        .catch((err) => {
+          if (err instanceof Error) throw new Error("value not provided ");
+        });
+      return data;
+    };
+    fetchData().then((products) => setProducts(products));
   }, []);
-};
 
-export const ProductContext = createContext(initProduct);
+  return (
+    <ProductContext.Provider value={{ product: products }}>
+      {children}
+    </ProductContext.Provider>
+  );
+};
