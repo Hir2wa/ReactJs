@@ -75,7 +75,7 @@ const reducer = (
       const filteredCart: CartItemType[] = state.cart.filter(
         (item) => item.sku !== sku
       );
-      return { ...state, cart: { ...filteredCart } };
+      return { ...state, cart: filteredCart };
     }
     case REDUCER_ACTION_TYPE.SUBMIT: {
       return { ...state, cart: [] };
