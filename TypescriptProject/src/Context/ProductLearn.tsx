@@ -14,15 +14,15 @@ type ChildrenType = {
   children?: ReactElement | ReactElement[];
 };
 
-const initProduct: ProductStateType = { product: [] };
+const initProduct: ProductType[] = [];
 export const ProductContext = createContext(initProduct);
 
 const ProductProvider = ({ children }: ChildrenType): ReactElement => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<ProductType[]>(initProduct);
   useEffect(() => {
     const fetchData = async (): Promise<ProductType[]> => {
       const data = await fetch("https://localhost:5500/products")
-        .then((res) => res.json)
+        .then((res) => res.json())
         .catch((err) => {
           if (err instanceof Error) throw new Error("value not provided ");
         });
@@ -32,7 +32,7 @@ const ProductProvider = ({ children }: ChildrenType): ReactElement => {
   }, []);
 
   return (
-    <ProductContext.Provider value={{ product: products }}>
+    <ProductContext.Provider value={products}>
       {children}
     </ProductContext.Provider>
   );
