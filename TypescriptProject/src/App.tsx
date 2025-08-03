@@ -6,9 +6,14 @@ import Cart from "./components/Cart";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <></>;
+  const [viewCart, setViewCart] = useState<boolean>(true);
+  const pageContent = viewCart ? <Cart /> : <Product />;
+  return;
+  <>
+    <Header viewCart={viewCart} setViewCart={setViewCart} />
+    {pageContent}
+    <Footer viewCart={viewCart} />
+  </>;
 }
 
 export default App;
