@@ -4,7 +4,10 @@ type propsType = {
   setViewCart: React.Dispatch<React.SetStateAction<boolean>>;
 };
 const Nav = ({ viewCart, setViewCart }: propsType) => {
-  return <div>Nav</div>;
+    const botton = viewCart ? <button onClick={()=>setViewCart(false)}> View Product</button> : <button onClick={()=>setViewCart(true)}>View Cart</button>
+  return (
+
+  )
 };
 
 export default Nav;
