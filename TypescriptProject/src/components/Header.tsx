@@ -1,4 +1,5 @@
 import React from "react";
+import Nav from "./Nav";
 type propsType = {
   viewCart: boolean;
   setViewCart: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,8 +14,10 @@ const Header = ({ viewCart, setViewCart }: propsType) => {
           <p>Total Price:</p>
         </div>
       </div>
+      <Nav viewCart={viewCart} setViewCart={setViewCart} />
     </header>
   );
+  return content;
 };
 
 export default Header;
