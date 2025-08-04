@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 import type { UseProductContextType } from "../Context/ProductsProvider";
 import useProducts from "../hooks/useProducts";
 import useCart from "../hooks/useCart";
-import Products from "./Products";
+import Product from "./Product";
 const ProductsList = () => {
   const { dispach, REDUCER_ACTIONS, cart } = useCart();
   const { products } = useProducts();
@@ -13,7 +13,7 @@ const ProductsList = () => {
     pageContent = products.map((product) => {
       let inCart: boolean = cart.some((item) => item.sku === product.sku);
       return (
-        <Products
+        <Product
           key={product.sku}
           product={product}
           dispach={dispach}
@@ -23,7 +23,8 @@ const ProductsList = () => {
       );
     });
   }
-  return <div>Product</div>;
+  const content = <main className="main main--products">{pageContent}</main>;
+  return content;
 };
 
 export default ProductsList;
