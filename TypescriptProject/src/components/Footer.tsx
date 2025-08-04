@@ -5,14 +5,14 @@ type propsType = {
   viewCart: boolean;
 };
 const Footer = ({ viewCart }: propsType) => {
-  const { totalPrice, totalItems } = useCart();
+  const { TotalItems, TotalPrice } = useCart();
   const year: number = new Date().getFullYear();
   const pageContent = viewCart ? (
     <p>Shopping cart &copy; {year}</p>
   ) : (
     <>
-      <p> Total Item : {totalItems}</p>
-      <p> Total Price: {totalPrice}</p>
+      <p> Total Item : {TotalItems}</p>
+      <p> Total Price: {TotalPrice}</p>
       <p> Shopping Cart &copy; {year}</p>
     </>
   );
