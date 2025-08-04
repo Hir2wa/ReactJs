@@ -34,7 +34,8 @@ const initState: ProductType[] = [];
 
 export type UseProductContextType = { products: ProductType[] };
 const initContextState: UseProductContextType = { products: [] };
-const ProductsContext = createContext<UseProductContextType>(initContextState);
+export const ProductsContext =
+  createContext<UseProductContextType>(initContextState);
 
 type ChildrenType = {
   children?: ReactElement | ReactElement[];
