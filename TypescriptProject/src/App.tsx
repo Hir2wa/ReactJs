@@ -8,12 +8,13 @@ import "./App.css";
 function App() {
   const [viewCart, setViewCart] = useState<boolean>(true);
   const pageContent = viewCart ? <Cart /> : <Product />;
-  return;
-  <>
-    <Header viewCart={viewCart} setViewCart={setViewCart} />
-    {pageContent}
-    <Footer viewCart={viewCart} />
-  </>;
+  return (
+    <>
+      <Header viewCart={viewCart} setViewCart={setViewCart} />
+      {pageContent}
+      <Footer viewCart={viewCart} />
+    </>
+  );
 }
 
 export default App;
