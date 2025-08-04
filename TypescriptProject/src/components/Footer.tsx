@@ -5,9 +5,20 @@ type propsType = {
   viewCart: boolean;
 };
 const Footer = ({ viewCart }: propsType) => {
-  const { TotalItems, TotalItems } = useCart();
+  const { totalPrice, totalItems } = useCart();
+  const year: number = new Date().getFullYear();
+  const pageContent = viewCart ? (
+    <p>Shopping cart &copy; {year}</p>
+  ) : (
+    <>
+      <p> Total Item : {totalItems}</p>
+      <p> Total Price: {totalPrice}</p>
+      <p> Shopping Cart &copy; {year}</p>
+    </>
+  );
 
-  return <div>Footer</div>;
+  const content = <footer className="footer">{pageContent}</footer>;
+  return content;
 };
 
 export default Footer;
