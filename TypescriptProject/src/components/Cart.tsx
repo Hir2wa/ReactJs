@@ -10,7 +10,7 @@ const Cart = () => {
     setConfirm(true);
   };
 
-  const content = confirm ? (
+  const pageContent = confirm ? (
     <h2>Thank You For Your Order....</h2>
   ) : (
     <>
@@ -28,9 +28,19 @@ const Cart = () => {
         })}
       </ul>
 
-      <div className="cart__totals"></div>
+      <div className="cart__totals">
+        <p>Total Items: {TotalItems}</p>
+        <p>Total Price: {TotalPrice}</p>
+        <button
+          disabled={!TotalItems}
+          onClick={onSubmitOrder}
+          className="cart__submit"
+        ></button>
+      </div>
     </>
   );
+
+  const content = <main className="main main--cart">{pageContent}</main>;
   return <div>Cart</div>;
 };
 
