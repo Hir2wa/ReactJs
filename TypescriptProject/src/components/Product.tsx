@@ -16,10 +16,10 @@ const Product = ({
   REDUCER_ACTIONS,
   product,
 }: propsType): ReactElement => {
-  const images: string = new URL(
-    `../images/${product.sku}.jpg`,
-    import.meta.url
-  ).href;
+  const images: string = product?.sku
+    ? new URL(`../images/${product.sku}.jpg`, import.meta.url).href
+    : "/images/fallback.jpg"; // default fallback
+
   console.log(images);
   const addToCart = () =>
     dispatch({
@@ -27,7 +27,7 @@ const Product = ({
       payload: { ...product, qty: 1 },
     });
 
-  const itemInCart = inCart ? `✅ -> Item in cart" : "➕ Add to cart` : null;
+  const itemInCart = inCart ? `✅ -> Item in cart : ➕ Add to cart` : null;
   const content = (
     <article className="product">
       <h3>{product.name}</h3>
@@ -43,7 +43,7 @@ const Product = ({
     </article>
   );
 
-  return <div>Products</div>;
+  return content;
 };
 
 export default Product;
