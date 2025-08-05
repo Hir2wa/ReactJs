@@ -5,7 +5,7 @@ import useProducts from "../hooks/useProducts";
 import useCart from "../hooks/useCart";
 import Product from "./Product";
 const ProductsList = () => {
-  const { dispach, REDUCER_ACTIONS, cart } = useCart();
+  const { dispatch, REDUCER_ACTIONS, cart } = useCart();
   const { products } = useProducts();
 
   let pageContent: ReactElement | ReactElement[] = <p>Loading...</p>;
@@ -16,7 +16,7 @@ const ProductsList = () => {
         <Product
           key={product.sku}
           product={product}
-          dispach={dispach}
+          dispatch={dispatch}
           REDUCER_ACTIONS={REDUCER_ACTIONS}
           inCart={inCart}
         />
