@@ -86,7 +86,7 @@ const reducer = (
 };
 
 const useCartContext = (initCartState: CartStateType) => {
-  const [state, dispach] = useReducer(reducer, initCartState);
+  const [state, dispatch] = useReducer(reducer, initCartState);
   const REDUCER_ACTIONS = useMemo(() => {
     return REDUCER_ACTION_TYPE;
   }, []);
@@ -108,12 +108,12 @@ const useCartContext = (initCartState: CartStateType) => {
     const sortB = Number(b.sku.slice(-4));
     return sortA - sortB;
   });
-  return { dispach, REDUCER_ACTIONS, cart, TotalItems, TotalPrice };
+  return { dispatch, REDUCER_ACTIONS, cart, TotalItems, TotalPrice };
 };
 
 export type UseCartContexttype = ReturnType<typeof useCartContext>;
 const InitCartContextState: UseCartContexttype = {
-  dispach: () => {},
+  dispatch: () => {},
   REDUCER_ACTIONS: REDUCER_ACTION_TYPE,
   TotalItems: 0,
   TotalPrice: "",
