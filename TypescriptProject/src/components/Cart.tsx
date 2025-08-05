@@ -17,9 +17,18 @@ const Cart = () => {
       <h2 className="offscreen">cart</h2>
       <ul className="cart">
         {cart.map((item) => {
-          return <CartLine />;
+          return (
+            <CartLine
+              key={item.sku}
+              item={item}
+              dispatch={dispatch}
+              REDUCER_ACTIONS={REDUCER_ACTIONS}
+            />
+          );
         })}
       </ul>
+
+      <div className="cart__totals"></div>
     </>
   );
   return <div>Cart</div>;
