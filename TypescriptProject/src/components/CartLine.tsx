@@ -6,9 +6,13 @@ import type { ReducerActionType } from "../Context/CardProvider";
 type typeProps = {
   item: CartItemType;
   dispatch: React.Dispatch<React.SetStateAction<boolean>>;
-  REDUCER_ACTIONS: ReducerAction;
+  REDUCER_ACTIONS: ReducerActionType;
 };
-const CartLine = () => {
+const CartLine = ({ item, dispatch, REDUCER_ACTIONS }: typeProps) => {
+  const images: string = item?.sku
+    ? new URL(`../images/${item.sku}.jpg`, import.meta.url).href
+    : "/images/fallback.jpg"; // default fallback
+
   return <div>CartLineComponent</div>;
 };
 
