@@ -1,4 +1,4 @@
-import React, { type ReactElement } from "react";
+import React, { type ChangeEvent, type ReactElement } from "react";
 import type { CartItemType } from "../Context/CardProvider";
 import type { ReducerAction } from "../Context/CardProvider";
 import type { ReducerActionType } from "../Context/CardProvider";
@@ -22,6 +22,38 @@ const CartLine = ({ item, dispatch, REDUCER_ACTIONS }: typeProps) => {
       </option>
     );
   });
+  const onChangeqty = (e: ChangeEvent) => {
+    dispatch({
+      type: REDUCER_ACTIONS.QUANTITY,
+      payload: { ...item, qty: Number(e.target.value) },
+    });
+  };
+
+  const onRemoveFromCar = () =>
+    dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item });
+  const content = (
+    <li className="cart__item">
+      <img src={images} alt={item.name} className="cart__img" />
+      <div aria-label="Item Name">{item.name}</div>
+      <div aria-label="Price Per Item">
+        {new Intl.NumberFormat("en-us", {
+          style = "currency",
+          currency = "USD",
+        }).format(item.price)}
+      </div>
+      <label htmlFor="itemQty" className="offscreen">
+        Item Quantity
+      </label>
+      <select
+        name="itemQty"
+        id="itemQty"
+        className="cart__select"
+        value={item.qty}
+        area-label="Item Quantity"
+      ></select>
+    </li>
+  );
+
   return <div>CartLineComponent</div>;
 };
 
