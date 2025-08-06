@@ -50,7 +50,17 @@ const CartLine = ({ item, dispatch, REDUCER_ACTIONS }: typeProps) => {
         className="cart__select"
         value={item.qty}
         area-label="Item Quantity"
-      ></select>
+        onChange={onChangeqty}
+      >
+        {" "}
+        {options}
+      </select>
+      <div className="cart__item-subtotal" area-label="Line Item Subtotal  ">
+        {new Intl.NumberFormat("en-us", {
+          style = "currency",
+          currency = "USD",
+        }).format(item.price)}
+      </div>
     </li>
   );
 
