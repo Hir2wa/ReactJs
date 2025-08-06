@@ -35,13 +35,15 @@ const Cart = () => {
           disabled={!TotalItems}
           onClick={onSubmitOrder}
           className="cart__submit"
-        ></button>
+        >
+          Place Order
+        </button>
       </div>
     </>
   );
 
   const content = <main className="main main--cart">{pageContent}</main>;
-  return <div>Cart</div>;
+  return content;
 };
 
 export default Cart;
