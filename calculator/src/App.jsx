@@ -132,76 +132,74 @@ const App = () => {
   };
 
   const handleClick = (value) => {
-    switch (value) {
-      case "AC":
-        handleClear();
-        break;
-      case "=":
-        handleEquals();
-        break;
-      case "%":
-        handlePercent();
-        break;
-      case "+/-":
-        handleSignChange();
-        break;
-      case "0":
-      case "1":
-      case "2":
-      case "3":
-      case "4":
-      case "5":
-      case "6":
-      case "7":
-      case "8":
-      case "9":
-      case ".":
-        handleNumber(value);
-        break;
-      case "+":
-      case "-":
-      case "x":
-      case "÷":
-        handleOperator(value);
-        break;
-      default:
-        break;
-    }
+    // switch (value) {
+    //   case "AC":
+    //     handleClear();
+    //     break;
+    //   case "=":
+    //     handleEquals();
+    //     break;
+    //   case "%":
+    //     handlePercent();
+    //     break;
+    //   case "+/-":
+    //     handleSignChange();
+    //     break;
+    //   case "0":
+    //   case "1":
+    //   case "2":
+    //   case "3":
+    //   case "4":
+    //   case "5":
+    //   case "6":
+    //   case "7":
+    //   case "8":
+    //   case "9":
+    //   case ".":
+    //     handleNumber(value);
+    //     break;
+    //   case "+":
+    //   case "-":
+    //   case "x":
+    //   case "÷":
+    //     handleOperator(value);
+    //     break;
+    //   default:
+    //     break;
+    // }
   };
 
-  // Keyboard support
-  const handleKeyPress = useCallback(
-    (event) => {
-      const key = event.key;
+  const handleKeyPress = useCallback();
+  // (event) => {
+  //   const key = event.key;
 
-      if (key >= "0" && key <= "9") {
-        handleClick(key);
-      } else if (key === ".") {
-        handleClick(".");
-      } else if (key === "+" || key === "-") {
-        handleClick(key);
-      } else if (key === "*") {
-        handleClick("x");
-      } else if (key === "/") {
-        event.preventDefault();
-        handleClick("÷");
-      } else if (key === "Enter" || key === "=") {
-        event.preventDefault();
-        handleClick("=");
-      } else if (key === "Escape" || key === "c" || key === "C") {
-        handleClick("AC");
-      } else if (key === "%") {
-        handleClick("%");
-      } else if (key === "Backspace") {
-        if (!evaluated && expression.length > 0) {
-          const newExpression = expression.slice(0, -1);
-          setExpression(newExpression);
-          setDisplay(newExpression || "0");
-        }
-      }
-    },
-    [expression, evaluated, lastResult]
-  );
+  //   if (key >= "0" && key <= "9") {
+  //     handleClick(key);
+  //   } else if (key === ".") {
+  //     handleClick(".");
+  //   } else if (key === "+" || key === "-") {
+  //     handleClick(key);
+  //   } else if (key === "*") {
+  //     handleClick("x");
+  //   } else if (key === "/") {
+  //     event.preventDefault();
+  //     handleClick("÷");
+  //   } else if (key === "Enter" || key === "=") {
+  //     event.preventDefault();
+  //     handleClick("=");
+  //   } else if (key === "Escape" || key === "c" || key === "C") {
+  //     handleClick("AC");
+  //   } else if (key === "%") {
+  //     handleClick("%");
+  //   } else if (key === "Backspace") {
+  //     if (!evaluated && expression.length > 0) {
+  //       const newExpression = expression.slice(0, -1);
+  //       setExpression(newExpression);
+  //       setDisplay(newExpression || "0");
+  //     }
+  //   }
+  // },
+  // [expression, evaluated, lastResult]
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyPress);
