@@ -132,41 +132,41 @@ const App = () => {
   };
 
   const handleClick = (value) => {
-    // switch (value) {
-    //   case "AC":
-    //     handleClear();
-    //     break;
-    //   case "=":
-    //     handleEquals();
-    //     break;
-    //   case "%":
-    //     handlePercent();
-    //     break;
-    //   case "+/-":
-    //     handleSignChange();
-    //     break;
-    //   case "0":
-    //   case "1":
-    //   case "2":
-    //   case "3":
-    //   case "4":
-    //   case "5":
-    //   case "6":
-    //   case "7":
-    //   case "8":
-    //   case "9":
-    //   case ".":
-    //     handleNumber(value);
-    //     break;
-    //   case "+":
-    //   case "-":
-    //   case "x":
-    //   case "÷":
-    //     handleOperator(value);
-    //     break;
-    //   default:
-    //     break;
-    // }
+    switch (value) {
+      case "AC":
+        handleClear();
+        break;
+      case "=":
+        handleEquals();
+        break;
+      case "%":
+        handlePercent();
+        break;
+      case "+/-":
+        handleSignChange();
+        break;
+      case "0":
+      case "1":
+      case "2":
+      case "3":
+      case "4":
+      case "5":
+      case "6":
+      case "7":
+      case "8":
+      case "9":
+      case ".":
+        handleNumber(value);
+        break;
+      case "+":
+      case "-":
+      case "x":
+      case "÷":
+        handleOperator(value);
+        break;
+      default:
+        break;
+    }
   };
 
   const handleKeyPress = useCallback();
