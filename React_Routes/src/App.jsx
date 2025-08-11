@@ -3,8 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Home from "./Home";
-import About from "./About";
+import Home from "./assets/Home";
+import About from "./assets/About";
 import Nav from "./Nav";
 function App() {
   return (
