@@ -1,5 +1,6 @@
 import React from "react";
-
+import bgImg from "../assets/about-hero.png";
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <div className="about-page-container">
