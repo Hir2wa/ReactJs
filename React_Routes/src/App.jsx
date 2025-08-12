@@ -3,19 +3,21 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Home from "./assets/Home";
-import About from "./assets/About";
-import Nav from "./Nav";
+import Home from "./pages/Home";
+import About from "./pages/About";
 function App() {
   return (
     <>
-      <Nav />
       <BrowserRouter>
-        <Link to="/"> Home</Link>
-        <Link to="/About"> About</Link>
+        <header>
+          <Link to="/">#VANLIFE</Link>
+          <nav>
+            <Link to="/about">About</Link>
+          </nav>
+        </header>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </BrowserRouter>
     </>
