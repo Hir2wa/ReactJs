@@ -44,7 +44,7 @@ function App() {
     setNewItem("");
   };
 
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState(" ");
   return (
     <div className="App">
       <Header title="Grocery List " />
@@ -61,6 +61,7 @@ function App() {
         handleChange={handleChange}
         handleDelete={handleDelete}
       />
+
       <Footer items={items} length={items.length} />
     </div>
   );
