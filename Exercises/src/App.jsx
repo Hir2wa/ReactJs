@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import { Route, Routes, Link } from "react-router-dom";
 import About from "./pages/About";
+import Books from "./pages/Books";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,13 +16,13 @@ function App() {
         <ul>
           <li>
             <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
+            <Link to="/books">Books</Link>
           </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route path="/about" element={<Books />}></Route>
       </Routes>
     </>
   );
