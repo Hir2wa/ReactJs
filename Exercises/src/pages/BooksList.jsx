@@ -1,7 +1,10 @@
 import React from "react";
-
 const BooksList = () => {
-  return <div>BooksList</div>;
+  return (
+    <>
+      <h1>Books List</h1>
+    </>
+  );
 };
 
 export default BooksList;
