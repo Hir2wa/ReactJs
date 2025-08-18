@@ -20,6 +20,7 @@ function App() {
         <ul>
           <li>
             <Link to="/">Home</Link>
+            {/*   link tag has more properties like replace and reloadDocument which used in different useCase  */}
           </li>
           <li>
             <Link to="/books">Books</Link>
