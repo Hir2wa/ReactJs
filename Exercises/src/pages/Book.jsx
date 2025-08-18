@@ -1,12 +1,15 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 const Book = () => {
   const { id } = useParams();
+  const obj = useOutletContext();
   console.log(id);
 
   return (
     <>
-      <p> Book {id}</p>
+      <p>
+        Book {id} {obj.hello}
+      </p>
     </>
   );
 };
