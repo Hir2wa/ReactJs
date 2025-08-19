@@ -19,15 +19,17 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
             {/*   link tag has more properties like replace and reloadDocument which used in different useCase   State property  */}
           </li>
           <li>
             <NavLink
               to="/books"
-              style={({ isActive }) => {
-                return isActive ? { color: "red" } : { color: "blue" };
-              }}
+              end
+              ///these will course the style applied to only be applied on the parent class only not even on the children class
+              // style={({ isActive }) => {
+              //   return isActive ? { color: "red" } : { color: "blue" };
+              // }}
             >
               Books
             </NavLink>
