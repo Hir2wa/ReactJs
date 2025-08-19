@@ -22,10 +22,9 @@ function App() {
             <Link to="/">Home</Link>
             {/*   link tag has more properties like replace and reloadDocument which used in different useCase   State property  */}
           </li>
-          <NavLink>
+          <li>
             <Link to="/books">Books</Link>
-          </NavLink>
-          {/*  these add specific important use like  active state of link easyly  */}
+          </li>
         </ul>
       </nav>
       <Routes>
