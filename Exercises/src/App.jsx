@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Home from "./pages/Home";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, NavLink } from "react-router-dom";
 import About from "./pages/About";
 import Book from "./pages/Book";
 import BooksList from "./pages/BooksList";
@@ -23,7 +23,14 @@ function App() {
             {/*   link tag has more properties like replace and reloadDocument which used in different useCase   State property  */}
           </li>
           <li>
-            <Link to="/books">Books</Link>
+            <NavLink
+              to="/books"
+              style={({ isActive }) => {
+                return isActive ? { color: "red" } : { color: "blue" };
+              }}
+            >
+              Books
+            </NavLink>
           </li>
         </ul>
       </nav>
