@@ -51,6 +51,21 @@ const Register = () => {
       <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"}>
         {errMsg} aria-live = 'assertive'
       </p>
+      <form action="">
+        <label htmlFor="userName">UserName:</label>
+        <input
+          type="text"
+          id="userName"
+          ref={useRef}
+          outoComplet="off"
+          onChange={(e) => setUser(e.target.value)
+          required
+          onBlur={()=>setUserFocus(false)}
+          onFocus={()=>setUserFocus(false)}
+          aria-invalid ={validName ? "true" : "false"}
+          }
+        />
+      </form>
     </section>
   );
 };
