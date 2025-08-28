@@ -5,7 +5,7 @@ const ThemeContext = ({ children }) => {
   const [colour, setColor] = useState("light");
 
   const toggleTheme = () => {
-    setColor((prev) => (prev == "light" ? "light" : "black"));
+    setColor((prev) => (prev == "light" ? "black" : "light"));
   };
   return (
     <Theme.Provider value={(toggleTheme, colour)}>
