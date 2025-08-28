@@ -9,7 +9,7 @@ import Register from "./pages/Register";
 import "./server";
 import Tabs from "./pages/Tabs";
 import CountDown from "./pages/CountDown";
-import ThemeContext from "./pages/ThemeContext";
+import ThemeProvider from "./pages/ThemeProvider";
 import ThemeButton from "./pages/ThemeButton";
 
 function App() {
@@ -32,12 +32,9 @@ function App() {
     //   </Routes>
     // </BrowserRouter>
     // <Register />
-    <>
-      {/* <Tabs />
-      <CountDown /> */}
-
+    <ThemeProvider>
       <ThemeButton />
-    </>
+    </ThemeProvider>
   );
 }
 
