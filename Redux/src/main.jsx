@@ -5,8 +5,9 @@ import App from "./App.jsx";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import { userReducer } from "./Features/user.jsx";
+import { themeReducer } from "./Features/Theme.jsx";
 const store = configureStore({
-  reducer: { user: userReducer },
+  reducer: { user: userReducer, theme: themeReducer },
 });
 
 createRoot(document.getElementById("root")).render(
