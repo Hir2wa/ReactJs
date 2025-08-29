@@ -1,7 +1,7 @@
 import React from "react";
 
 const ChangeColour = () => {
-  return <div>ChangeColour</div>;
+  return <button>ChangeColour</button>;
 };
 
 export default ChangeColour;
