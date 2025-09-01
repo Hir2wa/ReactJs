@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import ChangeColour from "../Components/ChangeColour";
+const initialStateValue = "";
 export const ThemeSlice = createSlice({
-  name: Theme,
-  initialState: "",
+  name: "Theme",
+  initialState: { value: initialStateValue },
   reducers: {
     ChangeColour: (state, action) => {
-      state: value: "";
+      state.value = action.payload;
     },
   },
 });
