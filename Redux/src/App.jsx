@@ -4,14 +4,14 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Profile from "./Components/Profile";
 import Login from "./Components/Login";
+import ColourChange from "./Components/colourChange";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Profile />
       <Login />
+      <ColourChange />
     </>
   );
 }
